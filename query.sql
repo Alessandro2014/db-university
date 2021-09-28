@@ -8,3 +8,8 @@ AND `date_of_birth` <= '1990-12-31';
 SELECT * 
 FROM `courses` 
 WHERE `cfu` > '10';
+
+-- 3. Selezionare tutti gli studenti che hanno più di 30 anni
+SELECT `name`,`surname`,`date_of_birth` 
+FROM `students` 
+WHERE `date_of_birth` < '1991-09-28';
