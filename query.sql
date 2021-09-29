@@ -30,3 +30,7 @@ AND `date` = '2020-06-20';
 SELECT * 
 FROM `degrees` 
 WHERE `name` LIKE '%magistrale%';
+
+-- 7 Da quanti dipartimenti è composta l'università? (12)
+SELECT COUNT(`id`) AS total_departments 
+FROM `departments`;
