@@ -4,3 +4,11 @@ FROM `students`
 INNER JOIN `degrees` 
 ON `students`.`degree_id` = `degrees`.`id`
 WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
+
+
+-- 2. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
+SELECT `departments`.`id`, `departments`.`name` AS `name_department`, `departments`.`address`,  `degrees`.`department_id`, `degrees`.`name` AS `name_of_courses` 
+FROM `departments` 
+INNER JOIN `degrees` 
+ON `departments`.`id` = `degrees`.`department_id`
+WHERE `departments`.`name` LIKE '%Neuroscienze%';
