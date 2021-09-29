@@ -12,3 +12,11 @@ FROM `departments`
 INNER JOIN `degrees` 
 ON `departments`.`id` = `degrees`.`department_id`
 WHERE `departments`.`name` LIKE '%Neuroscienze%';
+
+-- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+SELECT `courses`.*, `teachers`.`name` AS `name_of_teacher`, `teachers`.`surname` AS `surname_of_teacher`
+FROM `courses`
+INNER JOIN `teachers`
+ON `teachers`.`id` = `courses`.`id`
+WHERE `teachers`.`name` = 'Fulvio'
+AND`teachers`.`surname` = 'Amato';
