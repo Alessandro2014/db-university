@@ -23,19 +23,19 @@ ORDER BY `year` ASC;
 -- 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21)
 SELECT * 
 FROM `exams` 
-WHERE `hour` >= '14:00' 
+WHERE HOUR(`hour`) >= '14:00' 
 AND `date` = '2020-06-20';
 
 -- 6. Selezionare tutti i corsi di laurea magistrale (38)
 SELECT * 
 FROM `degrees` 
-WHERE `name` LIKE '%magistrale%';
+WHERE `level` = 'magistrale';
 
 -- 7 Da quanti dipartimenti è composta l'università? (12)
 SELECT COUNT(`id`) AS total_departments 
 FROM `departments`;
 
 -- 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
-SELECT COUNT(*) 
+SELECT COUNT(*) AS `total_teachers`
 FROM `teachers` 
 WHERE `phone` IS NULL;
